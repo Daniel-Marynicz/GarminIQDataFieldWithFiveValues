@@ -171,7 +171,7 @@ class DataFieldWithFiveValuesView extends WatchUi.DataField {
     function setColors()
     {
     	View.findDrawableById("Background").setColor(getBackgroundColor());
-    	View.findDrawableById("debug").setColor(getBackgroundColor());
+    	View.findDrawableById("debug").locY = 999;
         if (getBackgroundColor() == Graphics.COLOR_BLACK) {
             View.findDrawableById("value").setColor(Graphics.COLOR_WHITE);
             View.findDrawableById("label").setColor(Graphics.COLOR_WHITE);
