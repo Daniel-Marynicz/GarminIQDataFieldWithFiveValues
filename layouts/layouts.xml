@@ -93,10 +93,10 @@
         <drawable class="Background" />
         <label id="label" x="center" y="1%" color="Graphics.COLOR_LT_GRAY" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_TINY" />
         <label id="value" x="center" y="26%" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" font="Graphics.FONT_NUMBER_THAI_HOT" />
-        <label id="left_top_value" x="1%" y="10%" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_LEFT" font="Graphics.FONT_MEDIUM" />
-        <label id="right_top_value" x="99%" y="10%" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_RIGHT" font="Graphics.FONT_MEDIUM" />
-        <label id="left_bottom_value" x="1%" y="70%" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_LEFT" font="Graphics.FONT_MEDIUM" />
-        <label id="right_bottom_value" x="99%" y="70%" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_RIGHT" font="Graphics.FONT_MEDIUM" />
+        <label id="left_top_value" x="1%" y="10%" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_LEFT" font="Graphics.FONT_LARGE" />
+        <label id="right_top_value" x="99%" y="10%" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_RIGHT" font="Graphics.FONT_LARGE" />
+        <label id="left_bottom_value" x="1%" y="50%" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_LEFT" font="Graphics.FONT_LARGE" />
+        <label id="right_bottom_value" x="99%" y="50%" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_RIGHT" font="Graphics.FONT_LARGE" />
         <label id="debug" x="10%" y="72%" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_LEFT" font="Graphics.FONT_XTINY" />
     </layout>
     <layout id="MediumWideLayout5Field">
