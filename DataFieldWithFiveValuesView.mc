@@ -190,6 +190,5 @@ class DataFieldWithFiveValuesView extends WatchUi.DataField {
 			View.findDrawableById("right_bottom_value").setColor(Graphics.COLOR_BLACK);
         }
     }
-
-
 }
+
