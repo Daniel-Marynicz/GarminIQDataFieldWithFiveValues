@@ -3,11 +3,21 @@ using Toybox.Graphics;
 
 class DataFieldWithFiveValuesView extends WatchUi.DataField {
 
-    hidden var mValue;
+    protected var labelValue;
+    protected var mainValue;
+    protected var topLeftValue;
+    protected var topRightValue;
+    protected var bottomLeftValue;
+    protected var bottomRightValue;
 
     function initialize() {
         DataField.initialize();
-        mValue = 0.0f;
+        labelValue = "";
+    	mainValue = "";
+    	topLeftValue = "";
+    	topRightValue = "";
+    	bottomLeftValue = "";
+    	bottomRightValue = "";
     }
 
     // Set your layout here. Anytime the size of obscurity of
@@ -120,7 +130,7 @@ class DataFieldWithFiveValuesView extends WatchUi.DataField {
 			
 		}
         
-        View.findDrawableById("label").setText(Rez.Strings.label);
+        View.findDrawableById("label").setText(self.labelValue);
         return true;
     }
 
@@ -130,14 +140,14 @@ class DataFieldWithFiveValuesView extends WatchUi.DataField {
     // guarantee that compute() will be called before onUpdate().
     function compute(info) {
         // See Activity.Info in the documentation for available information.
-        if(info has :currentHeartRate){
-            if(info.currentHeartRate != null){
-                mValue = info.currentHeartRate;
-            } else {
-                mValue = 0.0f;
-            }
-        }
-        var labelView = View.findDrawableById("label");
+//        if(info has :currentHeartRate){
+//            if(info.currentHeartRate != null){
+//                mValue = info.currentHeartRate;
+//            } else {
+//                mValue = 0.0f;
+//            }
+//        }
+//        var labelView = View.findDrawableById("label");
         //mValue = labelView.locY; 
     }
     
@@ -146,40 +156,25 @@ class DataFieldWithFiveValuesView extends WatchUi.DataField {
     	setColors();
     	setValues();
 
-		
 	    View.onUpdate(dc);
-		dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_RED);
-    	dc.drawRectangle(0, 0,  dc.getWidth(),dc.getHeight());
-    	dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_RED);
-
-    	var label = View.findDrawableById("label");
-    	dc.drawRectangle(label.locX - (label.width/2) , label.locY, label.width, label.height);
-    	
-    	var value = View.findDrawableById("value");
-    	dc.drawRectangle(value.locX - (value.width/2) , value.locY, value.width, value.height);
-    	//View.findDrawableById("right_top_value").locX = View.findDrawableById("right_top_value").locX - PADDING_RIGHT;
-    	//var valueView = View.findDrawableById("value");
-    	//value.locY = 185;
-    	//View.findDrawableById("value").setText("123");
     }
     
     function setValues()
 	{
-		View.findDrawableById("left_top_value").setText("1234w");
-		View.findDrawableById("right_top_value").setText("1234w");
-		View.findDrawableById("left_bottom_value").setText("1234w");
-		View.findDrawableById("right_bottom_value").setText("1234w");
-		//View.findDrawableById("value").setText(mValue.format("%.2f"));
-		View.findDrawableById("value").setText("132");
+		View.findDrawableById("left_top_value").setText(topLeftValue);
+		View.findDrawableById("right_top_value").setText(topRightValue);
+		View.findDrawableById("left_bottom_value").setText(bottomLeftValue);
+		View.findDrawableById("right_bottom_value").setText(bottomRightValue);
+		View.findDrawableById("value").setText(mainValue);
 	}
 
     function setColors()
     {
     	View.findDrawableById("Background").setColor(getBackgroundColor());
+    	View.findDrawableById("debug").setColor(getBackgroundColor());
         if (getBackgroundColor() == Graphics.COLOR_BLACK) {
             View.findDrawableById("value").setColor(Graphics.COLOR_WHITE);
             View.findDrawableById("label").setColor(Graphics.COLOR_WHITE);
-            
             View.findDrawableById("left_top_value").setColor(Graphics.COLOR_WHITE);
 			View.findDrawableById("right_top_value").setColor(Graphics.COLOR_WHITE);
 			View.findDrawableById("left_bottom_value").setColor(Graphics.COLOR_WHITE);
@@ -189,7 +184,6 @@ class DataFieldWithFiveValuesView extends WatchUi.DataField {
         } else {
     		View.findDrawableById("value").setColor(Graphics.COLOR_BLACK);
         	View.findDrawableById("label").setColor(Graphics.COLOR_BLACK);
-        	
         	View.findDrawableById("left_top_value").setColor(Graphics.COLOR_BLACK);
 			View.findDrawableById("right_top_value").setColor(Graphics.COLOR_BLACK);
 			View.findDrawableById("left_bottom_value").setColor(Graphics.COLOR_BLACK);
