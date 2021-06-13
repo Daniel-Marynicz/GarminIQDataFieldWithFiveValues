@@ -95,9 +95,13 @@ class DataFieldWithFiveValuesView extends WatchUi.DataField {
 				View.findDrawableById("debug").setText("HugeWideLayout5Field" + " "  + width + "x" + height);
 				break;
 			// edge explore 78 5 Field Wide Layout
-			case (width >=240 && height >= 78):
+			case (width >=240 && height >= 95):
 				View.setLayout(Rez.Layouts.MediumWideLayout5Field(dc));
 				View.findDrawableById("debug").setText("MediumWideLayout5Field" + " "  + width + "x" + height);
+				break;
+			case (width >=240 && height >= 78):
+				View.setLayout(Rez.Layouts.MediumWideLayout5Field_2(dc));
+				View.findDrawableById("debug").setText("MediumWideLayout5Field_2" + " "  + width + "x" + height);
 				break;
 			// edge 830 240x52 5 Field Layout 
 			// edge 530 240x52 5 Field Layout
@@ -138,18 +142,7 @@ class DataFieldWithFiveValuesView extends WatchUi.DataField {
     // Calculate a value and save it locally in this method.
     // Note that compute() and onUpdate() are asynchronous, and there is no
     // guarantee that compute() will be called before onUpdate().
-    function compute(info) {
-        // See Activity.Info in the documentation for available information.
-//        if(info has :currentHeartRate){
-//            if(info.currentHeartRate != null){
-//                mValue = info.currentHeartRate;
-//            } else {
-//                mValue = 0.0f;
-//            }
-//        }
-//        var labelView = View.findDrawableById("label");
-        //mValue = labelView.locY; 
-    }
+    function compute(info) { }
     
 
     function onUpdate(dc) {
