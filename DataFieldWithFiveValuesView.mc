@@ -134,7 +134,6 @@ class DataFieldWithFiveValuesView extends WatchUi.DataField {
 			
 		}
         
-        View.findDrawableById("label").setText(self.labelValue);
         return true;
     }
 
@@ -148,6 +147,7 @@ class DataFieldWithFiveValuesView extends WatchUi.DataField {
     function onUpdate(dc) {
     	setColors();
     	setValues();
+    	View.findDrawableById("label").setText(self.labelValue);
 
 	    View.onUpdate(dc);
     }
@@ -184,4 +184,3 @@ class DataFieldWithFiveValuesView extends WatchUi.DataField {
         }
     }
 }
-
